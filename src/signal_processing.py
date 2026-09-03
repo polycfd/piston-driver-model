@@ -3,8 +3,17 @@ import math
 from scipy.interpolate import interp1d
 
 # ============================================================
-# FFT USED TO COMPUTE THE PRESSURE OSCILLATION FREQUENCY
-# Code by Pierre Coulombel
+# FFT used to compute pressure-oscillation frequencies.
+#
+# Derived from PolyCFD's fft_python-scripts implementation:
+# https://github.com/polycfd/fft_python-scripts
+# Original upstream file: Signal_processing.py 
+#
+# Copyright (c) 2026, the authors.
+# Licensed under the MIT License. Permission is hereby granted, free of charge,
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies, provided this copyright and permission notice are retained. See the
+# repository root LICENSE for the full MIT terms.
 # ============================================================
 
 #SAMPLE AND FFT#
