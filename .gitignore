@@ -216,3 +216,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# MacOS files
+.DS_Store
+
+# Generated figures
+figures/*
+!figures/.gitkeep
