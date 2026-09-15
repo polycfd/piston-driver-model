@@ -10,7 +10,7 @@ def new_figure(figsize=(18, 9)):
 def style_axes(ax, spine_width=2, tick_labelsize=35, tick_bold=True):
     for spine in ax.spines.values():
         spine.set_linewidth(spine_width)
-    for label in ax.get_xticklabels() + ax.get_yticklabels():
+    for label in ax.get_xticklabels(which='both') + ax.get_yticklabels(which='both'):
         if tick_bold:
             label.set_fontweight('bold')
         label.set_fontsize(tick_labelsize)
