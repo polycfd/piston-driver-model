@@ -50,7 +50,7 @@ def g(beta, M):
     X = 2 * np.pi / beta
     if np.isclose(beta, 0.0) or np.isclose(np.cos(X), 0.0):
         return np.inf
-    return np.tan(X) + M * X - 1/X
+    return np.tan(X) + M * X 
 
 
 beta_bracket = [2.01, 3.99] #solution search range

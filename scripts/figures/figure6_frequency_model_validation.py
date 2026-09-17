@@ -22,7 +22,7 @@ plt.scatter(freq_model.M_data_ms_small_column, freq_model.beta_data_ms_lithium_s
             s=250, marker='s', linewidths=3.5)
 plt.plot(freq_model.M_analytical_plot, freq_model.beta_analytical_results,
          color='red', linestyle='-', linewidth=6,
-         label=r'$\tan(\frac{2\pi}{\beta}) = -M \frac{2\pi}{\beta} + \frac{\beta}{2\pi}$')
+         label=r'$\tan(\frac{2\pi}{\beta}) + M \frac{2\pi}{\beta} = 0$')
 
 plt.xlabel('M', fontsize=35, fontweight='bold')
 plt.ylabel(r'$\beta$', fontsize=35, fontweight='bold')
