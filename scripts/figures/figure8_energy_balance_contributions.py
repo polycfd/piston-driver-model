@@ -33,7 +33,7 @@ for P in data:
     fig, ax = plt.subplots(figsize=(18, 10))
     w = 0.5
 
-    ax.bar(x, e_in, w, label=r'$E^*_{\text{in}}$', color='#C0392B', alpha=0.88, zorder=3)
+    ax.bar(x, e_in, w, label=r'$E^*_{\text{lower}}$', color='#C0392B', alpha=0.88, zorder=3)
     ax.bar(x, refl, w, bottom=e_in, label=r'$E^*_{\text{return}}$', color='#D4AC0D', alpha=0.85, zorder=3)
     ax.bar(x, piston_source, w, bottom=e_in + refl, label=r'$E^*_{\text{piston}}$', color='#2980B9', alpha=0.85, zorder=3)
 
