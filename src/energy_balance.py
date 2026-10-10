@@ -34,7 +34,28 @@ def compute_energy_balance_no_piston(t, p_t, V_t, p_b, V_b, v_liq, x_0, x_liq):
     E_total = E_gas_top + E_gas_bottom + E_kinetic+E_elastic_liq
     return t, E_total
 
-#Compute control volume energy#
+#Compute control volume energy with volume integral method#
+def compute_acoustic_energy(p_array, p_0, u_array, rho, c, L):
+    n_space = p_array.shape[0]
+    if n_space == 0:
+        return np.array([0.0])
+    Delta_x = L / n_space
+    p_array_acoustic = p_array - p_0
+    ep_density = (p_array_acoustic**2) / (2 * rho * c**2) 
+
+    u_array = u_array[1:]
+    u_mean = np.mean(u_array, axis=0)
+    u_fluctu = u_array - u_mean [None, :]
+    ec_density = (rho * u_fluctu**2) / 2 
+    
+    # Integration  
+    energy_density_sum = np.sum(ep_density + ec_density, axis=0)
+    e_ac_t = Delta_x * energy_density_sum
+    
+    return e_ac_t, u_fluctu
+
+
+#Compute control volume energy with energy balance#
 def cumulative_trapezoid(y, t):
     y = np.asarray(y, dtype=float)
     t = np.asarray(t, dtype=float)

@@ -249,7 +249,12 @@ t_100bar_M2, E_total_100bar_M2 = en.compute_energy_balance(param_study.sol_100ba
 E_ref_100bar_M2 = E_total_100bar_M2[0]
 
 #1 MPa, water, usual pda#
-#control-volume energy#
+
+#control volume energy, volume integral#
+e_ac_water_10bar_no_piston, u_fluctu_water_10bar_no_piston = en.compute_acoustic_energy(param_study.p_10bar_water_no_piston, 1e5, param_study.v_fluid_10bar_water_no_piston, param.rho_water, param.c_water, param.h)
+e_ac_water_10bar_M09, u_fluctu_water_10bar_09 = en.compute_acoustic_energy(param_study.p_10bar_water_09, 1e5, param_study.v_fluid_10bar_water_09, param.rho_water, param.c_water, param.h)
+
+#control-volume energy, energy balance#
 e_ac_sig_water_10bar_01, e_in_10bar_01, e_piston_10bar_01, e_out_10bar_01= en.compute_e_ac_from_signals(param_study.sol_10bar_water_01.t, param_study.v_piston_10bar_water_01, param_study.v_fluid_10bar_water_01[n,:], param_study.p_p_10bar_water_01, param_study.p_t_10bar_water_01, param_study.v_fluid_10bar_water_01, param.rho_aluminium, param.th_piston_01, param_study.a0_values_10bar_water_01)
 e_ac_sig_water_10bar_05, e_in_10bar_05, e_piston_10bar_05, e_out_10bar_05= en.compute_e_ac_from_signals(param_study.sol_10bar_water_05.t, param_study.v_piston_10bar_water_05, param_study.v_fluid_10bar_water_05[n,:], param_study.p_p_10bar_water_05, param_study.p_t_10bar_water_05, param_study.v_fluid_10bar_water_05, param.rho_aluminium, param.th_piston_05, param_study.a0_values_10bar_water_05)
 e_ac_sig_water_10bar_09, e_in_10bar_09, e_piston_10bar_09, e_out_10bar_09= en.compute_e_ac_from_signals(param_study.sol_10bar_water_09.t, param_study.v_piston_10bar_water_09, param_study.v_fluid_10bar_water_09[n,:], param_study.p_p_10bar_water_09, param_study.p_t_10bar_water_09, param_study.v_fluid_10bar_water_09, param.rho_aluminium, param.th_piston_09, param_study.a0_values_10bar_water_09)
@@ -782,8 +787,14 @@ E_piston_water_over_E_ref_75bar_from_peak_to_peak_different_M = np.array([
 
 #10 MPa, water, usual pda#
 
+#control volume energy, volume integral#
+e_ac_water_100bar_no_piston, u_fluctu_water_100bar_no_piston = en.compute_acoustic_energy(param_study.p_100bar_water_no_piston, 1e5, param_study.v_fluid_100bar_water_no_piston, param.rho_water, param.c_water, param.h)
+e_ac_water_100bar_M09, u_fluctu_water_100bar_09 = en.compute_acoustic_energy(param_study.p_100bar_water_09, 1e5, param_study.v_fluid_100bar_water_09, param.rho_water, param.c_water, param.h)
+
+#control volume energy, energy balance#
 e_ac_sig_water_100bar_01, e_in_100bar_01, e_piston_100bar_01, e_out_100bar_01= en.compute_e_ac_from_signals(param_study.sol_100bar_water_01.t, param_study.v_piston_100bar_water_01, param_study.v_fluid_100bar_water_01[n,:], param_study.p_p_100bar_water_01, param_study.p_t_100bar_water_01, param_study.v_fluid_100bar_water_01, param.rho_aluminium, param.th_piston_01, param_study.a0_values_100bar_water_01)
 e_ac_sig_water_100bar_05, e_in_100bar_05, e_piston_100bar_05, e_out_100bar_05= en.compute_e_ac_from_signals(param_study.sol_100bar_water_05.t, param_study.v_piston_100bar_water_05, param_study.v_fluid_100bar_water_05[n,:], param_study.p_p_100bar_water_05, param_study.p_t_100bar_water_05, param_study.v_fluid_100bar_water_05, param.rho_aluminium, param.th_piston_05, param_study.a0_values_100bar_water_05)
+e_ac_sig_water_100bar_09, e_in_100bar_09, e_piston_100bar_09, e_out_100bar_09= en.compute_e_ac_from_signals(param_study.sol_100bar_water_09.t, param_study.v_piston_100bar_water_09, param_study.v_fluid_100bar_water_09[n,:], param_study.p_p_100bar_water_09, param_study.p_t_100bar_water_09, param_study.v_fluid_100bar_water_09, param.rho_aluminium, param.th_piston_09, param_study.a0_values_100bar_water_09)
 e_ac_sig_water_100bar_1, e_in_100bar_1, e_piston_100bar_1, e_out_100bar_1= en.compute_e_ac_from_signals(param_study.sol_100bar_water_1.t, param_study.v_piston_100bar_water_1, param_study.v_fluid_100bar_water_1[n,:], param_study.p_p_100bar_water_1, param_study.p_t_100bar_water_1, param_study.v_fluid_100bar_water_1, param.rho_aluminium, param.th_piston_1, param_study.a0_values_100bar_water_1)
 e_ac_sig_water_100bar_15, e_in_100bar_15, e_piston_100bar_15, e_out_100bar_15= en.compute_e_ac_from_signals(param_study.sol_100bar_water_15.t, param_study.v_piston_100bar_water_15, param_study.v_fluid_100bar_water_15[n,:], param_study.p_p_100bar_water_15, param_study.p_t_100bar_water_15, param_study.v_fluid_100bar_water_15, param.rho_aluminium, param.th_piston_15, param_study.a0_values_100bar_water_15)
 e_ac_sig_water_100bar_2, e_in_100bar_2, e_piston_100bar_2, e_out_100bar_2= en.compute_e_ac_from_signals(param_study.sol_100bar_water_2.t, param_study.v_piston_100bar_water_2, param_study.v_fluid_100bar_water_2[n,:], param_study.p_p_100bar_water_2, param_study.p_t_100bar_water_2, param_study.v_fluid_100bar_water_2, param.rho_aluminium, param.th_piston_2, param_study.a0_values_100bar_water_2)

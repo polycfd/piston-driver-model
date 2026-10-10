@@ -4,7 +4,7 @@ from scripts import data_energy as data_en
 from src import plotting
 
 # ============================================================
-# GENERATION OF FIGURE 7
+# GENERATION OF FIGURE 8
 # ============================================================
 
 plotting.new_figure(figsize=(18, 10))
@@ -30,5 +30,5 @@ legend = plt.legend(loc='upper left', bbox_to_anchor=(1, 1), fontsize=35)
 plotting.style_legend(legend)
 
 plt.tight_layout()
-plotting.savefig(plt.gcf(), 'figure7_energy_transfer_fraction')
+plotting.savefig(plt.gcf(), 'figure8_energy_transfer_fraction')
 plt.show()

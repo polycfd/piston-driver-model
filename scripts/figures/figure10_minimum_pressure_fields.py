@@ -12,7 +12,7 @@ from scripts.run_parametric_study import T_10, T_50, T_100
 from scripts.run_parametric_study import sol_10bar_water_no_piston, sol_50bar_water_no_piston, sol_100bar_water_no_piston, x_fluid_eq_10bar_water_no_piston, x_fluid_eq_50bar_water_no_piston, x_fluid_eq_100bar_water_no_piston
 
 # ============================================================
-# GENERATION OF FIGURE 9
+# GENERATION OF FIGURE 10
 # ============================================================
 
 def compute_p_field_full(sol_y, dx_eq, n):
@@ -175,5 +175,5 @@ for p_p0, label in zip(driving_pressures, labels_pressure):
     plotting.style_axes(ax)
 
     plt.tight_layout()
-    plotting.savefig(fig, f'figure9_minimum_pressure_fields_{P_str}bar')
+    plotting.savefig(fig, f'figure10_minimum_pressure_fields_{P_str}bar')
     plt.show()

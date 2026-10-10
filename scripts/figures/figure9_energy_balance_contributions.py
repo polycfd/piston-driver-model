@@ -4,7 +4,7 @@ from scripts import data_energy as data_en
 from src import plotting
 
 # ============================================================
-# GENERATION OF FIGURE 8
+# GENERATION OF FIGURE 9
 # ============================================================
 
 configs = ['M=0', 'M=0.1', 'M=0.5', 'M=1', 'M=1.5', 'M=2']
@@ -57,5 +57,5 @@ for P in data:
     plotting.style_legend(legend)
 
     plt.tight_layout()
-    plotting.savefig(fig, 'figure8_energy_balance_contributions')
+    plotting.savefig(fig, 'figure9_energy_balance_contributions')
     plt.show()
